@@ -30,10 +30,10 @@ The Simple Portfolio Generator is an application that allows users to input thei
 
 ## Development Timeline
 ### Week 1: Development Phase
-- **Day 1-3**: Define form fields and set up basic HTML/CSS.
-- **Day 4-6**: Implement real-time preview and theme toggle functionality.
+- [X] **Day 1-3**: Define form fields and set up basic HTML/CSS.
+- [ ] **Day 4-6**: Implement real-time preview and theme toggle functionality.
 
 ### Week 2: Finalization Phase
-- **Day 7-9**: Add Blob API for file generation and test for edge cases.
-- **Day 10-11**: Optimize for responsive design and style the portfolio.
-- **Day 12-13**: Refactor code and polish UI/UX.
+- [ ] **Day 7-9**: Add Blob API for file generation and test for edge cases.
+- [ ] **Day 10-11**: Optimize for responsive design and style the portfolio.
+- [ ] **Day 12-13**: Refactor code and polish UI/UX.

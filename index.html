@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Portfolio Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="form-container">
+        <div class="site-details">
+            <h2>MyPortfolio - Portfolio Generator</h2>
+            <p>Developed by <a href="https://github.com/jackiejoe45" target="_blank">jackiejoe45</a></p>
+            <p>Instructions: Fill out the form below to generate your personal portfolio. You can add or remove sections as needed. Use the theme selector to customize the appearance of your portfolio.</p>
+        </div>
+        <form id="portfolioForm">
+            <label for="name">Name and Title:</label>
+            <input type="text" id="name" name="name" placeholder="Full Name and Title">
+            
+            <label for="bio">Short Bio:</label>
+            <textarea id="bio" name="bio" placeholder="A short bio about yourself"></textarea>
+            
+            <label for="specializations">Specializations:</label>
+            <input type="text" id="specializations" name="specializations" placeholder="e.g., AI/ML, Web Development">
+            
+            <label for="linkedin">LinkedIn Profile:</label>
+            <input type="url" id="linkedin" name="linkedin" placeholder="LinkedIn URL">
+            
+            <label for="devPlatforms">Dev Platforms:</label>
+            <input type="text" id="devPlatforms" name="devPlatforms" placeholder="e.g., Stack Overflow, HackerRank">
+            
+            <label for="otherLinks">Other Links:</label>
+            <input type="text" id="otherLinks" name="otherLinks" placeholder="e.g., Twitter, Discord">
+            
+            <label for="technicalSkills">Technical Skills:</label>
+            <input type="text" id="technicalSkills" name="technicalSkills" placeholder="e.g., Python, React">
+            
+            <label for="softSkills">Soft Skills:</label>
+            <input type="text" id="softSkills" name="softSkills" placeholder="e.g., Problem-solving, Teamwork">
+            
+            <label for="featuredProjects">Featured Projects:</label>
+            <textarea id="featuredProjects" name="featuredProjects" placeholder="Project details"></textarea>
+            
+            <label for="codeRepos">Code Repository Links:</label>
+            <input type="url" id="codeRepos" name="codeRepos" placeholder="GitHub/GitLab URL">
+            
+            <label for="workHistory">Work History:</label>
+            <textarea id="workHistory" name="workHistory" placeholder="Job titles, companies, responsibilities"></textarea>
+            
+            <label for="freelanceWork">Freelance Work:</label>
+            <textarea id="freelanceWork" name="freelanceWork" placeholder="Freelance projects"></textarea>
+            
+            <label for="degrees">Degrees:</label>
+            <input type="text" id="degrees" name="degrees" placeholder="Academic qualifications">
+            
+            <label for="certifications">Certifications:</label>
+            <input type="text" id="certifications" name="certifications" placeholder="e.g., AWS, Microsoft">
+            
+            <label for="testimonials">Testimonials:</label>
+            <textarea id="testimonials" name="testimonials" placeholder="Client or colleague reviews"></textarea>
+            
+            <label for="awards">Awards:</label>
+            <input type="text" id="awards" name="awards" placeholder="Awards and accolades">
+        </form>
+    </div>
+
+    <div class="preview-section">
+        <div class="controls">
+            <div>
+                <label for="themeSelect">Theme:</label>
+                <select id="themeSelect">
+                    <option value="default">Default</option>
+                    <option value="light">Light</option>
+                    <option value="dark">Dark</option>
+                    <option value="darcula">Darcula</option>
+                    <option value="valentine">Valentine</option>
+                    <option value="garden">Garden</option>
+                </select>
+            </div>
+            <button id="downloadButton">Download</button>
+        </div>
+        <div class="preview-container">
+            <!-- Live preview will be displayed here -->
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html> 
