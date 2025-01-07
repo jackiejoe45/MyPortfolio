@@ -55,6 +55,7 @@ body {
     color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
+    overflow-y: auto;
 }
 
 label {
@@ -72,4 +73,57 @@ input[type="text"], textarea, input[type="url"] {
 
 textarea {
     resize: vertical;
+}
+
+.preview-container.default {
+    background-color: #333;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+.preview-container.light {
+    background-color: #fff;
+    color: #000;
+    border: 2px solid #000;
+}
+
+.preview-container.dark {
+    background-color: #000;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+.preview-container.darcula {
+    background-color: #272935;
+    color: #B6B7B6;
+    border: 2px solid #EA72B7;
+}
+
+.preview-container.garden {
+    background-color: #E9E7E7;
+    color: #504F4F;
+    border: 2px solid #291E00;
+}
+
+.preview-container.valentine {
+    background-color: #F0D6E8;
+    color: #8C5E6E;
+    border: 2px solid #DBA0C9;
+}
+
+/* Add more theme styles as needed */
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 5px 0;
+}
+
+#preview-links a {
+    margin-right: 10px;
+    text-decoration: none;
+    color: inherit;
 } 

@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple Portfolio Generator</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <script src="script.js" defer></script>
 </head>
 <body>
     <div class="form-container">
@@ -14,8 +16,11 @@
             <p>Instructions: Fill out the form below to generate your personal portfolio. You can add or remove sections as needed. Use the theme selector to customize the appearance of your portfolio.</p>
         </div>
         <form id="portfolioForm">
-            <label for="name">Name and Title:</label>
-            <input type="text" id="name" name="name" placeholder="Full Name and Title">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Full Name">
+
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" placeholder="Title">
             
             <label for="bio">Short Bio:</label>
             <textarea id="bio" name="bio" placeholder="A short bio about yourself"></textarea>
@@ -61,6 +66,50 @@
             
             <label for="awards">Awards:</label>
             <input type="text" id="awards" name="awards" placeholder="Awards and accolades">
+
+            <label for="profilePicture">Profile Picture:</label>
+            <input type="file" id="profilePicture" name="profilePicture" accept="image/*">
+
+            <div id="experience-section">
+                <h3>Experience</h3>
+                <div class="experience-entry">
+                    <input type="text" name="experiencePeriod" placeholder="September 2021 - Present">
+                    <input type="text" name="experiencePosition" placeholder="Position">
+                    <input type="text" name="experienceCompany" placeholder="Company Name">
+                </div>
+                <!-- Add more experience entries dynamically -->
+            </div>
+
+            <div id="education-section">
+                <h3>Education</h3>
+                <div class="education-entry">
+                    <input type="text" name="educationPeriod" placeholder="2015 - 2019">
+                    <input type="text" name="educationDegree" placeholder="Degree">
+                    <input type="text" name="educationInstitution" placeholder="Institution Name">
+                </div>
+                <!-- Add more education entries dynamically -->
+            </div>
+
+            <div id="projects-section">
+                <h3>My Projects</h3>
+                <div class="project-entry">
+                    <input type="text" name="projectName" placeholder="Project Name">
+                    <input type="file" name="projectImage" accept="image/*">
+                    <textarea name="projectDescription" placeholder="Project description"></textarea>
+                </div>
+                <!-- Add more project entries dynamically -->
+            </div>
+
+            <div id="custom-theme-section">
+                <h3>Custom Theme</h3>
+                <input type="color" name="themeTextColor" placeholder="Text Color">
+                <input type="color" name="themeBackgroundColor" placeholder="Background Color">
+                <input type="color" name="themeAccentColor" placeholder="Accent Color">
+            </div>
+
+            <div>
+
+            </div>
         </form>
     </div>
 
@@ -75,12 +124,38 @@
                     <option value="darcula">Darcula</option>
                     <option value="valentine">Valentine</option>
                     <option value="garden">Garden</option>
+                    <option value="custom">Custom</option>
                 </select>
             </div>
             <button id="downloadButton">Download</button>
         </div>
         <div class="preview-container">
-            <!-- Live preview will be displayed here -->
+            <div id="profile-section" class="section">
+                <img id="preview-profilePicture" alt="Profile Picture" style="max-width: 200px; border-radius: 50%;">
+                <h1 id="preview-name"></h1>
+                <h2 id="preview-title"></h2>
+            </div>
+            <div id="bio-section" class="section">
+                <h5>Bio</h5>
+                <p id="preview-bio"></p>
+            </div>
+            <div id="specializations-section" class="section"   >
+                <h5>Specializations</h5>
+                <ul id="preview-specializations"></ul>
+            </div>
+            <div id="technical-skills-section" class="section">
+                <h5>Technical Skills</h5>
+                <ul id="preview-technicalSkills"></ul>
+            </div>
+            <div id="soft-skills-section" class="section">
+                <h5>Soft Skills</h5>
+                <ul id="preview-softSkills"></ul>
+            </div>
+            <div id="links-section" class="section">
+                <h5>Links</h5>
+                <div id="preview-links"></div>
+            </div>
+            <!-- Add more elements as needed -->
         </div>
     </div>
 
