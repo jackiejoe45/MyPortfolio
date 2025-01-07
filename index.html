@@ -16,6 +16,9 @@
             <p>Instructions: Fill out the form below to generate your personal portfolio. You can add or remove sections as needed. Use the theme selector to customize the appearance of your portfolio.</p>
         </div>
         <form id="portfolioForm">
+            <label for="profilePicture">Profile Picture:</label>
+            <input type="file" id="profilePicture" name="profilePicture" accept="image/*">
+
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" placeholder="Full Name">
 
@@ -67,38 +70,7 @@
             <label for="awards">Awards:</label>
             <input type="text" id="awards" name="awards" placeholder="Awards and accolades">
 
-            <label for="profilePicture">Profile Picture:</label>
-            <input type="file" id="profilePicture" name="profilePicture" accept="image/*">
-
-            <div id="experience-section">
-                <h3>Experience</h3>
-                <div class="experience-entry">
-                    <input type="text" name="experiencePeriod" placeholder="September 2021 - Present">
-                    <input type="text" name="experiencePosition" placeholder="Position">
-                    <input type="text" name="experienceCompany" placeholder="Company Name">
-                </div>
-                <!-- Add more experience entries dynamically -->
-            </div>
-
-            <div id="education-section">
-                <h3>Education</h3>
-                <div class="education-entry">
-                    <input type="text" name="educationPeriod" placeholder="2015 - 2019">
-                    <input type="text" name="educationDegree" placeholder="Degree">
-                    <input type="text" name="educationInstitution" placeholder="Institution Name">
-                </div>
-                <!-- Add more education entries dynamically -->
-            </div>
-
-            <div id="projects-section">
-                <h3>My Projects</h3>
-                <div class="project-entry">
-                    <input type="text" name="projectName" placeholder="Project Name">
-                    <input type="file" name="projectImage" accept="image/*">
-                    <textarea name="projectDescription" placeholder="Project description"></textarea>
-                </div>
-                <!-- Add more project entries dynamically -->
-            </div>
+            
 
             <div id="custom-theme-section">
                 <h3>Custom Theme</h3>
@@ -154,6 +126,30 @@
             <div id="links-section" class="section">
                 <h5>Links</h5>
                 <div id="preview-links"></div>
+            </div>
+            <div id="featuredProjects-section" class="section">
+                <h5>Featured Projects</h5>
+                <ul id="preview-featuredProjects"></ul>
+            </div>
+            <div id="codeRepos-section" class="section">
+                <h5>Code Repositories</h5>
+                <ul id="preview-codeRepos"></ul>
+            </div>
+            <div id="workHistory-section" class="section">
+                <h5>Work History</h5>
+                <ul id="preview-workHistory"></ul>
+            </div>
+            <div id="degrees-section" class="section">
+                <h5>Degrees</h5>
+                <p id="preview-degrees"></p>
+            </div>
+            <div id="testimonials-section" class="section">
+                <h5>Testimonials</h5>
+                <ul id="preview-testimonials"></ul>
+            </div>
+            <div id="awards-section" class="section">
+                <h5>Awards</h5>
+                <ul id="preview-awards"></ul>
             </div>
             <!-- Add more elements as needed -->
         </div>
