@@ -2,6 +2,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('portfolioForm');
     const previewContainer = document.querySelector('.preview-container');
     const themeSelect = document.getElementById('themeSelect');
+    const themeTextColor = document.getElementById('themeTextColor');
+    const themeBackgroundColor = document.getElementById('themeBackgroundColor');
+    const themeAccentColor = document.getElementById('themeAccentColor');
+    const downloadButton = document.getElementById('downloadButton');
 
     // Update preview in real-time
     form.addEventListener('input', (event) => {
@@ -33,8 +37,32 @@ document.addEventListener('DOMContentLoaded', () => {
     // Theme toggle functionality
     themeSelect.addEventListener('change', (event) => {
         const selectedTheme = event.target.value;
-        previewContainer.className = `preview-container ${selectedTheme}`;
+        
+        if (selectedTheme === 'custom') {
+            applyCustomTheme();
+        } else {
+            applyTheme(selectedTheme);
+        }
     });
+
+    function applyTheme(theme) {
+        previewContainer.className = `preview-container ${theme}`;
+        document.querySelectorAll('.section').forEach(section => {
+            section.className = `section ${theme}`;
+        });
+    }
+
+    function applyCustomTheme() {
+        previewContainer.style.backgroundColor = themeBackgroundColor.value;
+        previewContainer.style.color = themeTextColor.value;
+        previewContainer.style.borderColor = themeAccentColor.value;
+
+        document.querySelectorAll('.section').forEach(section => {
+            section.style.backgroundColor = themeBackgroundColor.value;
+            section.style.color = themeTextColor.value;
+            section.style.borderColor = themeAccentColor.value;
+        });
+    }
 
     // Update links section
     function updateLinks() {
@@ -109,4 +137,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 return '';
         }
     }
+
+    downloadButton.addEventListener('click', () => {
+        const options = {
+            margin: 0.5,
+            filename: 'portfolio.pdf',
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 2 },
+            jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+        };
+
+        html2pdf().from(previewContainer).set(options).save();
+    });
 });

@@ -6,6 +6,7 @@
     <title>Simple Portfolio Generator</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
     <script src="script.js" defer></script>
 </head>
 <body>
@@ -104,27 +105,33 @@
             </div>
             <button id="downloadButton">Download</button>
         </div>
-        <div class="preview-container">
-            <div id="profile-section" class="section">
-                <img id="preview-profilePicture" alt="Profile Picture" style="max-width: 200px; border-radius: 50%;">
-                <h1 id="preview-name"></h1>
-                <h2 id="preview-title"></h2>
-            </div>
-            <div id="bio-section" class="section">
-                <h5>Bio</h5>
-                <p id="preview-bio"></p>
-            </div>
-            <div id="specializations-section" class="section"   >
-                <h5>Specializations</h5>
-                <ul id="preview-specializations"></ul>
-            </div>
-            <div id="technical-skills-section" class="section">
-                <h5>Technical Skills</h5>
-                <ul id="preview-technicalSkills"></ul>
-            </div>
-            <div id="soft-skills-section" class="section">
-                <h5>Soft Skills</h5>
-                <ul id="preview-softSkills"></ul>
+        <div class="preview-container" id="content">
+            <div class="container">
+                <div id="profile-section" class="section">
+                    <img id="preview-profilePicture" alt="Profile Picture">
+                    <div id="profile-text">
+                        <h1 id="preview-name"></h1>
+                        <h2 id="preview-title"></h2>
+                    </div>
+                </div>
+                <div id="bio-section" class="section">
+                    <h5>Bio</h5>
+                    <p id="preview-bio"></p>
+                </div>
+                <div id="specializations-section" class="section">
+                    <h5>Specializations</h5>
+                    <ul id="preview-specializations"></ul>
+                </div>
+                <div id="skills-container">
+                    <div id="technical-skills-section" class="section">
+                        <h5>Technical Skills</h5>
+                        <ul id="preview-technicalSkills"></ul>
+                    </div>
+                    <div id="soft-skills-section" class="section">
+                        <h5>Soft Skills</h5>
+                        <ul id="preview-softSkills"></ul>
+                    </div>
+                </div>
             </div>
             <div id="links-section" class="section">
                 <h5>Links</h5>
@@ -158,6 +165,15 @@
         </div>
     </div>
 
-    <script src="scripts.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const downloadButton = document.getElementById('downloadButton');
+            const content = document.getElementById('content');
+
+            downloadButton.addEventListener('click', () => {
+                html2pdf().from(content).save();
+            });
+        });
+    </script>
 </body>
 </html> 
